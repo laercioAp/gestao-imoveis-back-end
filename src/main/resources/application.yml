@@ -4,15 +4,15 @@ spring:
     name: gestao-alugueis
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/gestao_alugueis
-    username: postgres
-    password: Laercio1005
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/gestao_alugueis}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
@@ -22,8 +22,8 @@ spring:
     locations: classpath:db/migration
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 jwt:
-  secret: ${JWT_SECRET:MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=}
-  expiration: 86400000
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION:86400000}
