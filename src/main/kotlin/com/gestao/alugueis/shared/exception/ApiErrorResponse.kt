@@ -1,0 +1,12 @@
+
+package com.gestao.alugueis.shared.exception
+
+import java.time.LocalDateTime
+
+data class ApiErrorResponse(
+    val timestamp: LocalDateTime = LocalDateTime.now(),
+    val status: Int,
+    val error: String,
+    val message: String,
+    val path: String
+)
