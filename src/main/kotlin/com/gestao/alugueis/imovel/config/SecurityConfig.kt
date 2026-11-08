@@ -22,7 +22,10 @@ class SecurityConfig(
     fun corsConfigurationSource(): CorsConfigurationSource {
         val configuration = CorsConfiguration()
 
-        configuration.allowedOrigins = listOf("http://localhost:4200")
+        configuration.allowedOrigins = listOf(
+        "http://localhost:4200",
+        "https://gestao-imoveis-3ds5zdzav-laercioaps-projects.vercel.app"
+        )
         configuration.allowedMethods = listOf(
             "GET",
             "POST",
