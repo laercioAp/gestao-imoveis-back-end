@@ -1,3 +1,4 @@
+
 package com.gestao.alugueis.config
 
 import org.springframework.context.annotation.Bean
@@ -23,9 +24,11 @@ class SecurityConfig(
         val configuration = CorsConfiguration()
 
         configuration.allowedOrigins = listOf(
-        "http://localhost:4200",
-        "https://gestao-imoveis-3ds5zdzav-laercioaps-projects.vercel.app"
+            "http://localhost:4200",
+            "https://gestao-imoveis-ashen.vercel.app",
+            "https://gestao-imoveis-3ds5zdzav-laercioaps-projects.vercel.app"
         )
+
         configuration.allowedMethods = listOf(
             "GET",
             "POST",
@@ -34,11 +37,13 @@ class SecurityConfig(
             "DELETE",
             "OPTIONS"
         )
+
         configuration.allowedHeaders = listOf(
             "Authorization",
             "Content-Type",
             "Accept"
         )
+
         configuration.allowCredentials = false
 
         val source = UrlBasedCorsConfigurationSource()
